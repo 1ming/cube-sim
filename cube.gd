@@ -5,7 +5,7 @@ const ROT_ANGLE = deg_to_rad(90)
 @onready var pivot_right = %PivotRight
 @onready var pivot_left = %PivotLeft
 @onready var pivot_cube = %Cube
-@onready var pos_matrix = PosMatrix.new([%A1, %A2, %A3, %A4], [%A5, %A6, %A7, %A8])
+@onready var pos_matrix = PosMatrix.new([%A5, %A6, %A7, %A8], [%A1, %A2, %A3, %A4])
 
 class PosMatrix:
 	var blocks_left = []
