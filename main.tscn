@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://cvxbfx1ioxnop"]
+
+[ext_resource type="Script" uid="uid://x3uby1y4fj2i" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://d37tw5vt7102d" path="res://block.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://dqdym5v4yve8f" path="res://cube.gd" id="2_h2yge"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig7tw"]
+resource_local_to_scene = true
+shading_mode = 0
+specular_mode = 2
+albedo_color = Color(0.8745098, 0.18431373, 0.29803923, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_ig7tw")
+size = Vector3(5, 0.05, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
+shading_mode = 0
+albedo_color = Color(0.49803922, 0.7764706, 0.019607844, 1)
+
+[sub_resource type="Environment" id="Environment_ig7tw"]
+background_mode = 2
+background_color = Color(1, 1, 1, 1)
+ambient_light_color = Color(1, 1, 1, 1)
+
+[node name="main" type="Node3D" unique_id=967018155]
+script = ExtResource("1_0xm2m")
+
+[node name="Cube" type="Node3D" parent="." unique_id=1251360907]
+unique_name_in_owner = true
+script = ExtResource("2_h2yge")
+
+[node name="PivotRight" type="Node3D" parent="Cube" unique_id=612008610]
+unique_name_in_owner = true
+
+[node name="A1" parent="Cube/PivotRight" unique_id=1820011985 instance=ExtResource("1_ig7tw")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, -0.5)
+
+[node name="A2" parent="Cube/PivotRight" unique_id=1699958487 instance=ExtResource("1_ig7tw")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0.5)
+
+[node name="A3" parent="Cube/PivotRight" unique_id=711874595 instance=ExtResource("1_ig7tw")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, 0.5)
+
+[node name="A4" parent="Cube/PivotRight" unique_id=1861400994 instance=ExtResource("1_ig7tw")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, -0.5)
+
+[node name="PivotLeft" type="Node3D" parent="Cube" unique_id=2056629192]
+unique_name_in_owner = true
+
+[node name="A5" parent="Cube/PivotLeft" unique_id=725986372 instance=ExtResource("1_ig7tw")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, -0.5)
+
+[node name="A6" parent="Cube/PivotLeft" unique_id=227592464 instance=ExtResource("1_ig7tw")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, 0.5)
+
+[node name="A7" parent="Cube/PivotLeft" unique_id=1046816736 instance=ExtResource("1_ig7tw")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, 0.5)
+
+[node name="A8" parent="Cube/PivotLeft" unique_id=1194458771 instance=ExtResource("1_ig7tw")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, -0.5)
+
+[node name="Axes" type="Node3D" parent="." unique_id=935228796]
+
+[node name="XAxis" type="MeshInstance3D" parent="Axes" unique_id=1313692187]
+mesh = SubResource("BoxMesh_0xm2m")
+
+[node name="YAxis" type="MeshInstance3D" parent="Axes" unique_id=125493455]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_0xm2m")
+surface_material_override/0 = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="CameraPivot" type="Marker3D" parent="." unique_id=870644991]
+transform = Transform3D(0.70710677, -0.35355338, 0.6123724, 0, 0.8660254, 0.5, -0.70710677, -0.35355338, 0.6123724, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=432635395]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+projection = 1
+size = 5.0
+far = 100.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1510015917]
+environment = SubResource("Environment_ig7tw")
+
+[node name="UI" type="Control" parent="." unique_id=1175167414]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="UI" unique_id=539593384]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/CanvasLayer" unique_id=1254776035]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="ButtonLeft" type="Button" parent="UI/CanvasLayer/HBoxContainer" unique_id=849083258]
+layout_mode = 2
+text = "Left"
+
+[node name="ButtonYaw" type="Button" parent="UI/CanvasLayer/HBoxContainer" unique_id=678114966]
+layout_mode = 2
+text = "Yaw"
+
+[node name="ButtonRight" type="Button" parent="UI/CanvasLayer/HBoxContainer" unique_id=111319633]
+layout_mode = 2
+text = "Right"
+
+[connection signal="pressed" from="UI/CanvasLayer/HBoxContainer/ButtonLeft" to="." method="_on_button_left_pressed"]
+[connection signal="pressed" from="UI/CanvasLayer/HBoxContainer/ButtonYaw" to="." method="_on_button_yaw_pressed"]
+[connection signal="pressed" from="UI/CanvasLayer/HBoxContainer/ButtonRight" to="." method="_on_button_right_pressed"]
