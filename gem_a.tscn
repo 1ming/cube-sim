@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bed0nohmn38q5"]
+
+[ext_resource type="PackedScene" uid="uid://dg3h2ed61w21k" path="res://art/gem_a.glb" id="1_j0kk8"]
+
+[node name="GemA" type="Node3D" unique_id=579265568]
+
+[node name="blockbench_export" parent="." unique_id=1977106998 instance=ExtResource("1_j0kk8")]
