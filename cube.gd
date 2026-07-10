@@ -18,18 +18,33 @@ class PosMatrix:
 	func rotate_right():
 		var block = blocks_right.pop_back()
 		blocks_right.push_front(block)
-		for b in blocks_right:
-			print(b.name)
-		print()
-		pass
+
+	func rotate_left():
+		var block = blocks_left.pop_back()
+		blocks_left.push_front(block)
 		
+	func rotate_yaw():
+		pass
+
+	func print_blocks():
+		var names_left = ""
+		var names_right = ""
+		for b in blocks_left:
+			names_left += " " + b.name
+		for b in blocks_right:
+			names_right += " " + b.name
+		print("left: ", names_left)
+		print("right: ", names_right)
 
 func rotate_left():
 	pivot_left.rotate_x(ROT_ANGLE)
+	pos_matrix.rotate_left()
+	pos_matrix.print_blocks()
 
 func rotate_right():
 	pivot_right.rotate_x(ROT_ANGLE)
 	pos_matrix.rotate_right()
+	pos_matrix.print_blocks()
 
 func rotate_yaw():
 	pass
