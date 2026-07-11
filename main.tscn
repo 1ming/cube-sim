@@ -32,6 +32,9 @@ script = ExtResource("1_0xm2m")
 unique_name_in_owner = true
 script = ExtResource("2_h2yge")
 
+[node name="PivotYaw" type="Node3D" parent="Cube" unique_id=1082135999]
+unique_name_in_owner = true
+
 [node name="PivotRight" type="Node3D" parent="Cube" unique_id=612008610]
 unique_name_in_owner = true
 

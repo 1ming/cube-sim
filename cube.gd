@@ -4,7 +4,7 @@ const ROT_ANGLE = deg_to_rad(90)
 
 @onready var pivot_right = %PivotRight
 @onready var pivot_left = %PivotLeft
-@onready var pivot_cube = %Cube
+@onready var pivot_yaw = %PivotYaw
 @onready var pos_matrix = PosMatrix.new([%A5, %A6, %A7, %A8], [%A1, %A2, %A3, %A4])
 
 class PosMatrix:
@@ -47,4 +47,4 @@ func rotate_right():
 	pos_matrix.print_blocks()
 
 func rotate_yaw():
-	pass
+	pivot_yaw.rotate_y(ROT_ANGLE)
