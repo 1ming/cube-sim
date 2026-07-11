@@ -90,7 +90,7 @@ class CubeData:
 		# - shift items in second column down by 2
 		# - update faces with new values
 		# normal face on right side:
-		# - rotate items in face (transpose): R (positive)
+		# - rotate items in face: R (positive)
 		var face_list = [Face.U, Face.C, Face.D, Face.B]
 		var col_left = []
 		var col_right = []
@@ -129,7 +129,7 @@ class CubeData:
 		# - shift forward one face
 		# - assign corresponding faces accordingly
 		# normal faces:
-		# - rotate (transpose): U (positive), D (negative)
+		# - rotate: U (positive), D (negative)
 		pass
 
 class PosMatrix:
