@@ -33,7 +33,6 @@ unique_name_in_owner = true
 script = ExtResource("2_h2yge")
 
 [node name="PivotYaw" type="Node3D" parent="Cube" unique_id=1082135999]
-unique_name_in_owner = true
 
 [node name="PivotRight" type="Node3D" parent="Cube" unique_id=612008610]
 unique_name_in_owner = true
@@ -69,7 +68,7 @@ transform = Transform3D(-1, -7.642742e-15, -8.742278e-08, 0, -1, 8.742278e-08, -
 
 [node name="A8" parent="Cube/PivotLeft" unique_id=600197167 instance=ExtResource("3_lquwl")]
 unique_name_in_owner = true
-transform = Transform3D(-1, -7.642742e-15, -8.742278e-08, 0, -1, 8.742278e-08, -8.742278e-08, 8.742278e-08, 1, 0, 0, 0)
+transform = Transform3D(-0.99995106, 0.0074720155, -0.006492427, -0.0074877637, -0.999969, 0.0024062144, -0.0064742574, 0.0024546823, 0.99997604, 0, 0, 0)
 
 [node name="Axes" type="Node3D" parent="." unique_id=935228796]
 
