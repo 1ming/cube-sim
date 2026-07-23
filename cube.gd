@@ -41,6 +41,31 @@ enum Face {L, C, R, B, U, D}
 
 enum Clr {R, G, B}
 
+# type of rotation, which part of the cube is moving
+# LOWER: half away from the positive direction of the axis
+# UPPER: half towards the positive direction of the axis
+# FULL: entire cube
+enum Rot {LOWER, UPPER, FULL}
+
+# direction to stack the matrices of the tangent faces
+# HORIZONTAL: cells shift along a row
+# VERTICAL: cells shift along a column
+enum StackDir {HORIZONTAL, VERTICAL}
+
+# normal faces ordered wrt positive direction of axis of rotation
+const AXIS_TO_FACES = {
+	"x": {
+		"tangent": [Face.U, Face.C, Face.D, Face.B],
+		"normal": [Face.L, Face.R],
+		"dir": StackDir.VERTICAL,
+	},
+	"y": {
+		"tangent": [Face.L, Face.C, Face.R, Face.B],
+		"normal": [Face.D, Face.U],
+		"dir": StackDir.HORIZONTAL,
+	}
+}
+
 class Cell:
 	var clr
 	var node
@@ -50,7 +75,7 @@ class Cell:
 		node = n
 	
 	func _to_string() -> String:
-		return "(c" + str(clr) + " " + node + ")"
+		return "(" + Clr.keys()[clr] + " " + node + ")"
 
 class CubeData:
 	var faces = {}
@@ -67,7 +92,7 @@ class CubeData:
 			for i in range(2):
 				for j in range(2):
 					faces[face][i][j] = Cell.new(colours[i][j], blocks[i][j].name)
-		print("faces: ", faces)
+		print_faces()
 
 	func _rotate_matrix(matrix, is_negative = false):
 		var result = [[null, null], [null, null]]
@@ -82,6 +107,33 @@ class CubeData:
 			result[1][0] = matrix[0][0]
 			result[1][1] = matrix[1][0]
 		return result
+
+	func rotate_axis(axis: String, rot_type: Rot):
+		var tangent_faces = AXIS_TO_FACES[axis].tangent
+		var dir = AXIS_TO_FACES[axis].dir
+		var normal_faces = (
+			AXIS_TO_FACES[axis].normal if rot_type == Rot.FULL
+			else AXIS_TO_FACES[axis].normal[0] if rot_type == Rot.LOWER
+			else AXIS_TO_FACES[axis].normal[1]
+		)
+		
+		if rot_type == Rot.FULL:
+			# store copy original matrix of the first face
+			var first_matrix = faces[tangent_faces[0]].duplicate()
+			
+			# assign the matrix of each face to that of the next face
+			for i in range(len(tangent_faces) - 1):
+				faces[tangent_faces[i]] = faces[tangent_faces[i+1]]
+			faces[tangent_faces[len(tangent_faces) - 1]] = first_matrix
+		print("after full rot. tangential faces: ")
+		print_faces()
+		
+
+		# rotate normal faces
+		for f in normal_faces:
+			faces[f] = _rotate_matrix(faces[f])
+		print("after rotating normal faces: ")
+		print_faces()
 
 	func rotate_right():
 		# rotate the right half of the cube about the x-axis
@@ -131,6 +183,10 @@ class CubeData:
 		# normal faces:
 		# - rotate: U (positive), D (negative)
 		pass
+	
+	func print_faces():
+		for f in faces:
+			print(Face.keys()[f], ": ", faces[f])
 
 class PosMatrix:
 	var blocks_left = []
@@ -170,8 +226,10 @@ func rotate_right():
 	pivot_right.rotate_x(ROT_ANGLE)
 	pos_matrix.rotate_right()
 	pos_matrix.print_blocks()
-	cube_data.rotate_right()
+	#cube_data.rotate_right()
+	cube_data.rotate_axis("x", Rot.FULL)
 
 func rotate_yaw():
 	pivot_yaw.rotate_y(ROT_ANGLE)
-	cube_data.rotate_yaw()
+	#cube_data.rotate_yaw()
+	cube_data.rotate_axis("y", Rot.FULL)

@@ -25,78 +25,427 @@ background_mode = 2
 background_color = Color(1, 1, 1, 1)
 ambient_light_color = Color(1, 1, 1, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1bvp3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_885r8"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
 [node name="main" type="Node3D" unique_id=967018155]
 script = ExtResource("1_0xm2m")
 
-[node name="Cube" type="Node3D" parent="." unique_id=1251360907]
+[node name="3D" type="Node3D" parent="." unique_id=226722067]
+
+[node name="Cube" type="Node3D" parent="3D" unique_id=1251360907]
 unique_name_in_owner = true
 script = ExtResource("2_h2yge")
 
-[node name="PivotYaw" type="Node3D" parent="Cube" unique_id=1082135999]
-
-[node name="PivotRight" type="Node3D" parent="Cube" unique_id=612008610]
+[node name="PivotYaw" type="Node3D" parent="3D/Cube" unique_id=1082135999]
 unique_name_in_owner = true
 
-[node name="A1" parent="Cube/PivotRight" unique_id=2146762988 instance=ExtResource("3_lquwl")]
+[node name="PivotRight" type="Node3D" parent="3D/Cube" unique_id=612008610]
 unique_name_in_owner = true
 
-[node name="A2" parent="Cube/PivotRight" unique_id=579265568 instance=ExtResource("4_7mycd")]
+[node name="A1" parent="3D/Cube/PivotRight" unique_id=2146762988 instance=ExtResource("3_lquwl")]
 unique_name_in_owner = true
 
-[node name="A3" parent="Cube/PivotRight" unique_id=103087178 instance=ExtResource("3_lquwl")]
+[node name="LabelG1" type="Label3D" parent="3D/Cube/PivotRight/A1" unique_id=1323493811]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1, 1.01, -0.75)
+pixel_size = 0.01
+text = "A1"
+
+[node name="LabelR1" type="Label3D" parent="3D/Cube/PivotRight/A1" unique_id=1672028553]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.01, 0.5, -0.75)
+pixel_size = 0.01
+text = "A1"
+
+[node name="LabelB1" type="Label3D" parent="3D/Cube/PivotRight/A1" unique_id=1504518092]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 1, 0.5, -1.51)
+pixel_size = 0.01
+text = "A1"
+
+[node name="A2" parent="3D/Cube/PivotRight" unique_id=579265568 instance=ExtResource("4_7mycd")]
+unique_name_in_owner = true
+
+[node name="LabelG2" type="Label3D" parent="3D/Cube/PivotRight/A2" unique_id=25723726]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1, 1.01, 0.75)
+pixel_size = 0.01
+text = "A2"
+
+[node name="LabelB2" type="Label3D" parent="3D/Cube/PivotRight/A2" unique_id=394574861]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 1.51)
+pixel_size = 0.01
+text = "A2"
+
+[node name="LabelR2" type="Label3D" parent="3D/Cube/PivotRight/A2" unique_id=2090863765]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.01, 0.5, 0.75)
+pixel_size = 0.01
+text = "A2"
+
+[node name="A3" parent="3D/Cube/PivotRight" unique_id=103087178 instance=ExtResource("3_lquwl")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0)
 
-[node name="A4" parent="Cube/PivotRight" unique_id=1127250527 instance=ExtResource("4_7mycd")]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0)
+[node name="LabelB3" type="Label3D" parent="3D/Cube/PivotRight/A3" unique_id=2060786452]
+transform = Transform3D(1, 0, 0, 0, -1, -1.509958e-07, 0, 1.509958e-07, -1, 1, 0.49999988, -1.51)
+pixel_size = 0.01
+text = "A3"
 
-[node name="PivotLeft" type="Node3D" parent="Cube" unique_id=2056629192]
+[node name="LabelR3" type="Label3D" parent="3D/Cube/PivotRight/A3" unique_id=1438203564]
+transform = Transform3D(-4.371139e-08, 0, 1, 8.742278e-08, -1, 3.821371e-15, 1, 8.742278e-08, 4.371139e-08, 2.01, 0.49999994, -0.75000006)
+pixel_size = 0.01
+text = "A3"
+
+[node name="LabelG3" type="Label3D" parent="3D/Cube/PivotRight/A3" unique_id=1083494187]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1, 1.0099999, -0.75000006)
+pixel_size = 0.01
+text = "A3"
+
+[node name="A4" parent="3D/Cube/PivotRight" unique_id=1127250527 instance=ExtResource("4_7mycd")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0.0062229037, 0)
+
+[node name="LabelB4" type="Label3D" parent="3D/Cube/PivotRight/A4" unique_id=379818558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.506223, 1.51)
+pixel_size = 0.01
+text = "A4"
+
+[node name="LabelR4" type="Label3D" parent="3D/Cube/PivotRight/A4" unique_id=425480437]
+transform = Transform3D(-4.371139e-08, 0, 1, 8.742278e-08, -1, 3.821371e-15, 1, 8.742278e-08, 4.371139e-08, 2.01, 0.50622296, 0.74999994)
+pixel_size = 0.01
+text = "A4"
+
+[node name="LabelG4" type="Label3D" parent="3D/Cube/PivotRight/A4" unique_id=1593263271]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1, 1.016223, 0.74999994)
+pixel_size = 0.01
+text = "A4"
+
+[node name="PivotLeft" type="Node3D" parent="3D/Cube" unique_id=2056629192]
 unique_name_in_owner = true
 
-[node name="A5" parent="Cube/PivotLeft" unique_id=727502118 instance=ExtResource("4_7mycd")]
+[node name="A5" parent="3D/Cube/PivotLeft" unique_id=727502118 instance=ExtResource("4_7mycd")]
 unique_name_in_owner = true
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
 
-[node name="A6" parent="Cube/PivotLeft" unique_id=450842594 instance=ExtResource("3_lquwl")]
+[node name="LabelB5" type="Label3D" parent="3D/Cube/PivotLeft/A5" unique_id=23316598]
+transform = Transform3D(-1, 7.642742e-15, 8.742278e-08, 0, -1, 8.742278e-08, 8.742278e-08, 8.742278e-08, 1, 1.0000001, 0.5, 1.5099999)
+pixel_size = 0.01
+text = "A5"
+
+[node name="LabelG5" type="Label3D" parent="3D/Cube/PivotLeft/A5" unique_id=1092269639]
+transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 1.0000001, 1.01, 0.74999994)
+pixel_size = 0.01
+text = "A5"
+
+[node name="LabelR5" type="Label3D" parent="3D/Cube/PivotLeft/A5" unique_id=1622769597]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.01, 0.5, 0.7499998)
+pixel_size = 0.01
+text = "A5"
+
+[node name="A6" parent="3D/Cube/PivotLeft" unique_id=450842594 instance=ExtResource("3_lquwl")]
 unique_name_in_owner = true
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
 
-[node name="A7" parent="Cube/PivotLeft" unique_id=452884240 instance=ExtResource("4_7mycd")]
+[node name="LabelG6" type="Label3D" parent="3D/Cube/PivotLeft/A6" unique_id=1249072458]
+transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0.99999994, 1.01, -0.75000006)
+pixel_size = 0.01
+text = "A6"
+
+[node name="LabelB6" type="Label3D" parent="3D/Cube/PivotLeft/A6" unique_id=1829953860]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.9999999, 0.5, -1.5100001)
+pixel_size = 0.01
+text = "A6"
+
+[node name="LabelR6" type="Label3D" parent="3D/Cube/PivotLeft/A6" unique_id=930805505]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.01, 0.5, -0.7500002)
+pixel_size = 0.01
+text = "A6"
+
+[node name="A7" parent="3D/Cube/PivotLeft" unique_id=452884240 instance=ExtResource("4_7mycd")]
 unique_name_in_owner = true
 transform = Transform3D(-1, -7.642742e-15, -8.742278e-08, 0, -1, 8.742278e-08, -8.742278e-08, 8.742278e-08, 1, 0, 0, 0)
 
-[node name="A8" parent="Cube/PivotLeft" unique_id=600197167 instance=ExtResource("3_lquwl")]
+[node name="LabelB7" type="Label3D" parent="3D/Cube/PivotLeft/A7" unique_id=1712745433]
+transform = Transform3D(-1, 1.5099579e-07, -8.742278e-08, -1.509958e-07, -1, 8.742278e-08, -8.742276e-08, 8.742279e-08, 1, 0.9999999, 0.5000001, 1.51)
+pixel_size = 0.01
+text = "A7"
+
+[node name="LabelR7" type="Label3D" parent="3D/Cube/PivotLeft/A7" unique_id=496193515]
+transform = Transform3D(-4.371139e-08, 0, 1, 8.742278e-08, -1, 3.821371e-15, 1, 8.742278e-08, 4.371139e-08, 2.01, 0.50000006, 0.7500001)
+pixel_size = 0.01
+text = "A7"
+
+[node name="LabelG7" type="Label3D" parent="3D/Cube/PivotLeft/A7" unique_id=256721011]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, -7.642742e-15, 1.3113416e-07, 1, -8.742278e-08, 1, -1.3113416e-07, 0.99999994, 1.0100001, 0.75)
+pixel_size = 0.01
+text = "A7"
+
+[node name="A8" parent="3D/Cube/PivotLeft" unique_id=600197167 instance=ExtResource("3_lquwl")]
 unique_name_in_owner = true
-transform = Transform3D(-0.99995106, 0.0074720155, -0.006492427, -0.0074877637, -0.999969, 0.0024062144, -0.0064742574, 0.0024546823, 0.99997604, 0, 0, 0)
+transform = Transform3D(-1, -8.742277e-08, 0, 8.742278e-08, -0.99999994, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Axes" type="Node3D" parent="." unique_id=935228796]
+[node name="LabelG8" type="Label3D" parent="3D/Cube/PivotLeft/A8" unique_id=1102167497]
+transform = Transform3D(-1, -3.821371e-15, -8.742278e-08, -8.7422784e-08, 4.3711392e-08, 1.0000001, 0, 1, -4.371139e-08, 0.99999994, 1.0100002, -0.75)
+pixel_size = 0.01
+text = "A8"
 
-[node name="XAxis" type="MeshInstance3D" parent="Axes" unique_id=1313692187]
+[node name="LabelR8" type="Label3D" parent="3D/Cube/PivotLeft/A8" unique_id=1136024297]
+transform = Transform3D(-0.006474203, -0.0074877734, 0.99995095, 0.00245471, -0.9999691, -0.007472006, 0.99997604, 0.0024061864, 0.006492393, 2.0185008, 0.4831248, -0.7381353)
+pixel_size = 0.01
+text = "A8"
+
+[node name="LabelB8" type="Label3D" parent="3D/Cube/PivotLeft/A8" unique_id=50633993]
+transform = Transform3D(-0.99999994, -8.742277e-08, 7.642742e-15, -8.742278e-08, 1, -8.7422784e-08, 0, -8.742277e-08, -1, 1.0134709, 0.48880598, -1.5046744)
+pixel_size = 0.01
+text = "A8"
+
+[node name="Axes" type="Node3D" parent="3D" unique_id=935228796]
+
+[node name="XAxis" type="MeshInstance3D" parent="3D/Axes" unique_id=1313692187]
 mesh = SubResource("BoxMesh_0xm2m")
 
-[node name="YAxis" type="MeshInstance3D" parent="Axes" unique_id=125493455]
+[node name="YAxis" type="MeshInstance3D" parent="3D/Axes" unique_id=125493455]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_0xm2m")
 surface_material_override/0 = SubResource("StandardMaterial3D_0xm2m")
 
-[node name="CameraPivot" type="Marker3D" parent="." unique_id=870644991]
-transform = Transform3D(0.70710677, -0.35355338, 0.6123724, 0, 0.8660254, 0.5, -0.70710677, -0.35355338, 0.6123724, 0, 0, 0)
-
-[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=432635395]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
-projection = 1
-size = 5.0
-far = 100.0
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1510015917]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="3D" unique_id=1510015917]
 environment = SubResource("Environment_ig7tw")
 
 [node name="UI" type="Control" parent="." unique_id=1175167414]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HFlowContainer" parent="UI" unique_id=1915300794]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FaceCameras" type="GridContainer" parent="UI/HSplitContainer" unique_id=2060883963]
+layout_mode = 2
+columns = 3
+
+[node name="Panel" type="Panel" parent="UI/HSplitContainer/FaceCameras" unique_id=1014978711]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1bvp3")
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/HSplitContainer/FaceCameras" unique_id=453315312]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_885r8")
+
+[node name="Up" type="VBoxContainer" parent="UI/HSplitContainer/FaceCameras/PanelContainer" unique_id=336643475]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HSplitContainer/FaceCameras/PanelContainer/Up" unique_id=1030373077]
+layout_mode = 2
+text = "U"
+horizontal_alignment = 1
+
+[node name="Up" type="SubViewportContainer" parent="UI/HSplitContainer/FaceCameras/PanelContainer/Up" unique_id=398146335]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="UI/HSplitContainer/FaceCameras/PanelContainer/Up/Up" unique_id=505568146]
+handle_input_locally = false
+size = Vector2i(200, 200)
+render_target_update_mode = 4
+
+[node name="U" type="Marker3D" parent="UI/HSplitContainer/FaceCameras/PanelContainer/Up/Up/SubViewport" unique_id=124368379]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="UI/HSplitContainer/FaceCameras/PanelContainer/Up/Up/SubViewport/U" unique_id=1664698797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+projection = 1
+size = 4.0
+
+[node name="Panel2" type="Panel" parent="UI/HSplitContainer/FaceCameras" unique_id=1596414142]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1bvp3")
+
+[node name="PanelContainer2" type="PanelContainer" parent="UI/HSplitContainer/FaceCameras" unique_id=2138556861]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_885r8")
+
+[node name="Left" type="VBoxContainer" parent="UI/HSplitContainer/FaceCameras/PanelContainer2" unique_id=1200380736]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HSplitContainer/FaceCameras/PanelContainer2/Left" unique_id=873662269]
+layout_mode = 2
+text = "L"
+horizontal_alignment = 1
+
+[node name="Left" type="SubViewportContainer" parent="UI/HSplitContainer/FaceCameras/PanelContainer2/Left" unique_id=2084278162]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="UI/HSplitContainer/FaceCameras/PanelContainer2/Left/Left" unique_id=276106085]
+handle_input_locally = false
+size = Vector2i(200, 200)
+render_target_update_mode = 4
+
+[node name="L" type="Marker3D" parent="UI/HSplitContainer/FaceCameras/PanelContainer2/Left/Left/SubViewport" unique_id=670999317]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="UI/HSplitContainer/FaceCameras/PanelContainer2/Left/Left/SubViewport/L" unique_id=1784762401]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+projection = 1
+size = 4.0
+
+[node name="PanelContainer3" type="PanelContainer" parent="UI/HSplitContainer/FaceCameras" unique_id=1227837691]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_885r8")
+
+[node name="Front" type="VBoxContainer" parent="UI/HSplitContainer/FaceCameras/PanelContainer3" unique_id=578710719]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HSplitContainer/FaceCameras/PanelContainer3/Front" unique_id=386092215]
+layout_mode = 2
+text = "F"
+horizontal_alignment = 1
+
+[node name="Front" type="SubViewportContainer" parent="UI/HSplitContainer/FaceCameras/PanelContainer3/Front" unique_id=1694678447]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="UI/HSplitContainer/FaceCameras/PanelContainer3/Front/Front" unique_id=43964817]
+handle_input_locally = false
+size = Vector2i(200, 200)
+render_target_update_mode = 4
+
+[node name="F" type="Marker3D" parent="UI/HSplitContainer/FaceCameras/PanelContainer3/Front/Front/SubViewport" unique_id=801308561]
+
+[node name="Camera3D" type="Camera3D" parent="UI/HSplitContainer/FaceCameras/PanelContainer3/Front/Front/SubViewport/F" unique_id=1537807932]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+projection = 1
+size = 4.0
+
+[node name="PanelContainer4" type="PanelContainer" parent="UI/HSplitContainer/FaceCameras" unique_id=325528634]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_885r8")
+
+[node name="Right" type="VBoxContainer" parent="UI/HSplitContainer/FaceCameras/PanelContainer4" unique_id=1503281638]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HSplitContainer/FaceCameras/PanelContainer4/Right" unique_id=1922329645]
+layout_mode = 2
+text = "R"
+horizontal_alignment = 1
+
+[node name="Right" type="SubViewportContainer" parent="UI/HSplitContainer/FaceCameras/PanelContainer4/Right" unique_id=1738112827]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="UI/HSplitContainer/FaceCameras/PanelContainer4/Right/Right" unique_id=1339568020]
+handle_input_locally = false
+size = Vector2i(200, 200)
+render_target_update_mode = 4
+
+[node name="R" type="Marker3D" parent="UI/HSplitContainer/FaceCameras/PanelContainer4/Right/Right/SubViewport" unique_id=213338934]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="UI/HSplitContainer/FaceCameras/PanelContainer4/Right/Right/SubViewport/R" unique_id=2022912530]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+projection = 1
+size = 4.0
+
+[node name="Panel7" type="Panel" parent="UI/HSplitContainer/FaceCameras" unique_id=710667693]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1bvp3")
+
+[node name="PanelContainer6" type="PanelContainer" parent="UI/HSplitContainer/FaceCameras" unique_id=1845953713]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_885r8")
+
+[node name="Down" type="VBoxContainer" parent="UI/HSplitContainer/FaceCameras/PanelContainer6" unique_id=2088427994]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HSplitContainer/FaceCameras/PanelContainer6/Down" unique_id=687070607]
+layout_mode = 2
+text = "D"
+horizontal_alignment = 1
+
+[node name="Down" type="SubViewportContainer" parent="UI/HSplitContainer/FaceCameras/PanelContainer6/Down" unique_id=1950015331]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="UI/HSplitContainer/FaceCameras/PanelContainer6/Down/Down" unique_id=870547329]
+handle_input_locally = false
+size = Vector2i(200, 200)
+render_target_update_mode = 4
+
+[node name="D" type="Marker3D" parent="UI/HSplitContainer/FaceCameras/PanelContainer6/Down/Down/SubViewport" unique_id=827635650]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="UI/HSplitContainer/FaceCameras/PanelContainer6/Down/Down/SubViewport/D" unique_id=1234462826]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+projection = 1
+size = 4.0
+
+[node name="Panel3" type="Panel" parent="UI/HSplitContainer/FaceCameras" unique_id=156850023]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1bvp3")
+
+[node name="Panel6" type="Panel" parent="UI/HSplitContainer/FaceCameras" unique_id=1132541177]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1bvp3")
+
+[node name="PanelContainer7" type="PanelContainer" parent="UI/HSplitContainer/FaceCameras" unique_id=1879915162]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_885r8")
+
+[node name="Back" type="VBoxContainer" parent="UI/HSplitContainer/FaceCameras/PanelContainer7" unique_id=13205177]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HSplitContainer/FaceCameras/PanelContainer7/Back" unique_id=578702033]
+layout_mode = 2
+text = "B"
+horizontal_alignment = 1
+
+[node name="Back" type="SubViewportContainer" parent="UI/HSplitContainer/FaceCameras/PanelContainer7/Back" unique_id=309678001]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="UI/HSplitContainer/FaceCameras/PanelContainer7/Back/Back" unique_id=1802560565]
+handle_input_locally = false
+size = Vector2i(200, 200)
+render_target_update_mode = 4
+
+[node name="B" type="Marker3D" parent="UI/HSplitContainer/FaceCameras/PanelContainer7/Back/Back/SubViewport" unique_id=1647443151]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="UI/HSplitContainer/FaceCameras/PanelContainer7/Back/Back/SubViewport/B" unique_id=220982627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+projection = 1
+size = 4.0
+
+[node name="Panel9" type="Panel" parent="UI/HSplitContainer/FaceCameras" unique_id=833586892]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1bvp3")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="UI/HSplitContainer" unique_id=1899733596]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="UI/HSplitContainer/SubViewportContainer" unique_id=318683266]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="CameraPivot" type="Marker3D" parent="UI/HSplitContainer/SubViewportContainer/SubViewport" unique_id=870644991]
+transform = Transform3D(0.70710677, -0.35355338, 0.6123724, 0, 0.8660254, 0.5, -0.70710677, -0.35355338, 0.6123724, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="UI/HSplitContainer/SubViewportContainer/SubViewport/CameraPivot" unique_id=432635395]
+transform = Transform3D(1, 0, 0, 0, 1, 8.940697e-08, 0, -5.9604645e-08, 1, 0, 0, 10)
+projection = 1
+size = 5.0
+far = 100.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="UI" unique_id=539593384]
 
