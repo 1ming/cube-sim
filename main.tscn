@@ -494,18 +494,72 @@ grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
 
-[node name="ButtonX" type="Button" parent="UI/CanvasLayer/HBoxContainer" unique_id=849083258]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CanvasLayer/HBoxContainer" unique_id=366159185]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/CanvasLayer/HBoxContainer/VBoxContainer" unique_id=1700515414]
 layout_mode = 2
 text = "X"
+horizontal_alignment = 1
 
-[node name="ButtonY" type="Button" parent="UI/CanvasLayer/HBoxContainer" unique_id=678114966]
+[node name="XPos" type="Button" parent="UI/CanvasLayer/HBoxContainer/VBoxContainer" unique_id=849083258]
+layout_mode = 2
+text = "Upper"
+
+[node name="XNeg" type="Button" parent="UI/CanvasLayer/HBoxContainer/VBoxContainer" unique_id=1794940639]
+layout_mode = 2
+text = "Lower"
+
+[node name="XFull" type="Button" parent="UI/CanvasLayer/HBoxContainer/VBoxContainer" unique_id=861139314]
+layout_mode = 2
+text = "Full"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/CanvasLayer/HBoxContainer" unique_id=2060988794]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=929140166]
 layout_mode = 2
 text = "Y"
+horizontal_alignment = 1
 
-[node name="ButtonZ" type="Button" parent="UI/CanvasLayer/HBoxContainer" unique_id=111319633]
+[node name="YPos" type="Button" parent="UI/CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=312611254]
+layout_mode = 2
+text = "Upper"
+
+[node name="YNeg" type="Button" parent="UI/CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=2084679924]
+layout_mode = 2
+text = "Lower"
+
+[node name="YFull" type="Button" parent="UI/CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=760902348]
+layout_mode = 2
+text = "Full"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="UI/CanvasLayer/HBoxContainer" unique_id=689675153]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/CanvasLayer/HBoxContainer/VBoxContainer3" unique_id=602779556]
 layout_mode = 2
 text = "Z"
+horizontal_alignment = 1
 
-[connection signal="pressed" from="UI/CanvasLayer/HBoxContainer/ButtonX" to="." method="_on_button_x_pressed"]
-[connection signal="pressed" from="UI/CanvasLayer/HBoxContainer/ButtonY" to="." method="_on_button_y_pressed"]
-[connection signal="pressed" from="UI/CanvasLayer/HBoxContainer/ButtonZ" to="." method="_on_button_z_pressed"]
+[node name="ZPos" type="Button" parent="UI/CanvasLayer/HBoxContainer/VBoxContainer3" unique_id=175449306]
+layout_mode = 2
+text = "Upper"
+
+[node name="ZNeg" type="Button" parent="UI/CanvasLayer/HBoxContainer/VBoxContainer3" unique_id=1537773255]
+layout_mode = 2
+text = "Lower"
+
+[node name="ZFull" type="Button" parent="UI/CanvasLayer/HBoxContainer/VBoxContainer3" unique_id=1552940978]
+layout_mode = 2
+text = "Full"
+
+[connection signal="pressed" from="UI/CanvasLayer/HBoxContainer/VBoxContainer/XPos" to="." method="_on_x_pos_pressed"]
+[connection signal="pressed" from="UI/CanvasLayer/HBoxContainer/VBoxContainer/XNeg" to="." method="_on_x_neg_pressed"]
+[connection signal="pressed" from="UI/CanvasLayer/HBoxContainer/VBoxContainer/XFull" to="." method="_on_x_full_pressed"]
+[connection signal="pressed" from="UI/CanvasLayer/HBoxContainer/VBoxContainer2/YPos" to="." method="_on_y_pos_pressed"]
+[connection signal="pressed" from="UI/CanvasLayer/HBoxContainer/VBoxContainer2/YNeg" to="." method="_on_y_neg_pressed"]
+[connection signal="pressed" from="UI/CanvasLayer/HBoxContainer/VBoxContainer2/YFull" to="." method="_on_y_full_pressed"]
+[connection signal="pressed" from="UI/CanvasLayer/HBoxContainer/VBoxContainer3/ZPos" to="." method="_on_z_pos_pressed"]
+[connection signal="pressed" from="UI/CanvasLayer/HBoxContainer/VBoxContainer3/ZNeg" to="." method="_on_z_neg_pressed"]
+[connection signal="pressed" from="UI/CanvasLayer/HBoxContainer/VBoxContainer3/ZFull" to="." method="_on_z_full_pressed"]

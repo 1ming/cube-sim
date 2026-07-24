@@ -187,10 +187,22 @@ class CubeData:
 			print(Face.keys()[f], ": ", faces[f])
 			
 
-func reparent_blocks(rot_axis: String):
+func reparent_blocks(rot_axis: String, rot_type: Rot = Rot.UPPER):
 	print("pivot on axis: ", rot_axis)
+	
+	if rot_type == Rot.FULL:
+		# add all nodes in stationary group to pivot group
+		for block: Block in get_tree().get_nodes_in_group("blocks"):
+			if block.rot_group == block.STATIONARY:
+				block.rot_group = block.PIVOT
+				block.reparent(pivot_group)
+				print(block.name, " switched to pivot")
+		return
+
 	for block: Block in get_tree().get_nodes_in_group("blocks"):
-		if block.in_rot_area(rot_axis):
+		if ((block.in_rot_area(rot_axis) and rot_type == Rot.UPPER)
+			or (not block.in_rot_area(rot_axis) and rot_type == Rot.LOWER)
+		):
 			if block.rot_group == block.STATIONARY:
 				# reparent to pivot group
 				block.rot_group = block.PIVOT
@@ -202,15 +214,13 @@ func reparent_blocks(rot_axis: String):
 			block.reparent(stationary_group)
 			print(block.name, " switched to stationary")
 
-
-func rot_x():
-	reparent_blocks("x")
-	pivot_group.rotate_x(ROT_ANGLE)
-
-func rot_y():
-	reparent_blocks("y")
-	pivot_group.rotate_y(ROT_ANGLE)
-
-func rot_z():
-	reparent_blocks("z")
-	pivot_group.rotate_z(ROT_ANGLE)
+func rotate_blocks(axis: String, rot_type: Rot = Rot.UPPER):
+	reparent_blocks(axis, rot_type)
+	
+	match axis:
+		"x":
+			pivot_group.rotate_x(ROT_ANGLE)
+		"y":
+			pivot_group.rotate_y(ROT_ANGLE)
+		"z":
+			pivot_group.rotate_z(ROT_ANGLE)

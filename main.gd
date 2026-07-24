@@ -22,3 +22,39 @@ func _on_button_y_pressed() -> void:
 
 func _on_button_z_pressed() -> void:
 	cube.rot_z()
+
+
+func _on_x_full_pressed() -> void:
+	cube.rotate_blocks("x", cube.Rot.FULL)
+
+
+func _on_x_neg_pressed() -> void:
+	cube.rotate_blocks("x", cube.Rot.LOWER)
+
+
+func _on_x_pos_pressed() -> void:
+	cube.rotate_blocks("x", cube.Rot.UPPER)
+
+
+func _on_y_pos_pressed() -> void:
+	cube.rotate_blocks("y", cube.Rot.UPPER)
+
+
+func _on_y_neg_pressed() -> void:
+	cube.rotate_blocks("y", cube.Rot.LOWER)
+
+
+func _on_y_full_pressed() -> void:
+	cube.rotate_blocks("y", cube.Rot.FULL)
+
+
+func _on_z_pos_pressed() -> void:
+	cube.rotate_blocks("z", cube.Rot.UPPER)
+
+
+func _on_z_neg_pressed() -> void:
+	cube.rotate_blocks("z", cube.Rot.LOWER)
+
+
+func _on_z_full_pressed() -> void:
+	cube.rotate_blocks("z", cube.Rot.FULL)
