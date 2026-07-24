@@ -25,6 +25,10 @@ background_mode = 2
 background_color = Color(1, 1, 1, 1)
 ambient_light_color = Color(1, 1, 1, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_885r8"]
+margin = 0.2
+size = Vector3(5, 5, 2)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1bvp3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_885r8"]
@@ -42,164 +46,169 @@ script = ExtResource("1_0xm2m")
 unique_name_in_owner = true
 script = ExtResource("2_h2yge")
 
-[node name="PivotYaw" type="Node3D" parent="3D/Cube" unique_id=1082135999]
+[node name="Stationary" type="Node3D" parent="3D/Cube" unique_id=949806750]
 unique_name_in_owner = true
 
-[node name="PivotRight" type="Node3D" parent="3D/Cube" unique_id=612008610]
+[node name="A1" parent="3D/Cube/Stationary" unique_id=2146762988 groups=["blocks"] instance=ExtResource("3_lquwl")]
 unique_name_in_owner = true
+id = "A1"
 
-[node name="A1" parent="3D/Cube/PivotRight" unique_id=2146762988 instance=ExtResource("3_lquwl")]
-unique_name_in_owner = true
-
-[node name="LabelG1" type="Label3D" parent="3D/Cube/PivotRight/A1" unique_id=1323493811]
+[node name="LabelG1" type="Label3D" parent="3D/Cube/Stationary/A1" unique_id=1323493811]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1, 1.01, -0.75)
 pixel_size = 0.01
 text = "A1"
 
-[node name="LabelR1" type="Label3D" parent="3D/Cube/PivotRight/A1" unique_id=1672028553]
+[node name="LabelR1" type="Label3D" parent="3D/Cube/Stationary/A1" unique_id=1672028553]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.01, 0.5, -0.75)
 pixel_size = 0.01
 text = "A1"
 
-[node name="LabelB1" type="Label3D" parent="3D/Cube/PivotRight/A1" unique_id=1504518092]
+[node name="LabelB1" type="Label3D" parent="3D/Cube/Stationary/A1" unique_id=1504518092]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 1, 0.5, -1.51)
 pixel_size = 0.01
 text = "A1"
 
-[node name="A2" parent="3D/Cube/PivotRight" unique_id=579265568 instance=ExtResource("4_7mycd")]
+[node name="A2" parent="3D/Cube/Stationary" unique_id=579265568 groups=["blocks"] instance=ExtResource("4_7mycd")]
 unique_name_in_owner = true
+id = "A2"
 
-[node name="LabelG2" type="Label3D" parent="3D/Cube/PivotRight/A2" unique_id=25723726]
+[node name="LabelG2" type="Label3D" parent="3D/Cube/Stationary/A2" unique_id=25723726]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1, 1.01, 0.75)
 pixel_size = 0.01
 text = "A2"
 
-[node name="LabelB2" type="Label3D" parent="3D/Cube/PivotRight/A2" unique_id=394574861]
+[node name="LabelB2" type="Label3D" parent="3D/Cube/Stationary/A2" unique_id=394574861]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 1.51)
 pixel_size = 0.01
 text = "A2"
 
-[node name="LabelR2" type="Label3D" parent="3D/Cube/PivotRight/A2" unique_id=2090863765]
+[node name="LabelR2" type="Label3D" parent="3D/Cube/Stationary/A2" unique_id=2090863765]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.01, 0.5, 0.75)
 pixel_size = 0.01
 text = "A2"
 
-[node name="A3" parent="3D/Cube/PivotRight" unique_id=103087178 instance=ExtResource("3_lquwl")]
+[node name="A3" parent="3D/Cube/Stationary" unique_id=103087178 groups=["blocks"] instance=ExtResource("3_lquwl")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0)
+id = "A3"
 
-[node name="LabelB3" type="Label3D" parent="3D/Cube/PivotRight/A3" unique_id=2060786452]
+[node name="LabelB3" type="Label3D" parent="3D/Cube/Stationary/A3" unique_id=2060786452]
 transform = Transform3D(1, 0, 0, 0, -1, -1.509958e-07, 0, 1.509958e-07, -1, 1, 0.49999988, -1.51)
 pixel_size = 0.01
 text = "A3"
 
-[node name="LabelR3" type="Label3D" parent="3D/Cube/PivotRight/A3" unique_id=1438203564]
+[node name="LabelR3" type="Label3D" parent="3D/Cube/Stationary/A3" unique_id=1438203564]
 transform = Transform3D(-4.371139e-08, 0, 1, 8.742278e-08, -1, 3.821371e-15, 1, 8.742278e-08, 4.371139e-08, 2.01, 0.49999994, -0.75000006)
 pixel_size = 0.01
 text = "A3"
 
-[node name="LabelG3" type="Label3D" parent="3D/Cube/PivotRight/A3" unique_id=1083494187]
+[node name="LabelG3" type="Label3D" parent="3D/Cube/Stationary/A3" unique_id=1083494187]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1, 1.0099999, -0.75000006)
 pixel_size = 0.01
 text = "A3"
 
-[node name="A4" parent="3D/Cube/PivotRight" unique_id=1127250527 instance=ExtResource("4_7mycd")]
+[node name="A4" parent="3D/Cube/Stationary" unique_id=1127250527 groups=["blocks"] instance=ExtResource("4_7mycd")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0.0062229037, 0)
+id = "A4"
 
-[node name="LabelB4" type="Label3D" parent="3D/Cube/PivotRight/A4" unique_id=379818558]
+[node name="LabelB4" type="Label3D" parent="3D/Cube/Stationary/A4" unique_id=379818558]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.506223, 1.51)
 pixel_size = 0.01
 text = "A4"
 
-[node name="LabelR4" type="Label3D" parent="3D/Cube/PivotRight/A4" unique_id=425480437]
+[node name="LabelR4" type="Label3D" parent="3D/Cube/Stationary/A4" unique_id=425480437]
 transform = Transform3D(-4.371139e-08, 0, 1, 8.742278e-08, -1, 3.821371e-15, 1, 8.742278e-08, 4.371139e-08, 2.01, 0.50622296, 0.74999994)
 pixel_size = 0.01
 text = "A4"
 
-[node name="LabelG4" type="Label3D" parent="3D/Cube/PivotRight/A4" unique_id=1593263271]
+[node name="LabelG4" type="Label3D" parent="3D/Cube/Stationary/A4" unique_id=1593263271]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1, 1.016223, 0.74999994)
 pixel_size = 0.01
 text = "A4"
 
-[node name="PivotLeft" type="Node3D" parent="3D/Cube" unique_id=2056629192]
-unique_name_in_owner = true
-
-[node name="A5" parent="3D/Cube/PivotLeft" unique_id=727502118 instance=ExtResource("4_7mycd")]
+[node name="A5" parent="3D/Cube/Stationary" unique_id=727502118 groups=["blocks"] instance=ExtResource("4_7mycd")]
 unique_name_in_owner = true
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+id = "A5"
 
-[node name="LabelB5" type="Label3D" parent="3D/Cube/PivotLeft/A5" unique_id=23316598]
+[node name="LabelB5" type="Label3D" parent="3D/Cube/Stationary/A5" unique_id=23316598]
 transform = Transform3D(-1, 7.642742e-15, 8.742278e-08, 0, -1, 8.742278e-08, 8.742278e-08, 8.742278e-08, 1, 1.0000001, 0.5, 1.5099999)
 pixel_size = 0.01
 text = "A5"
 
-[node name="LabelG5" type="Label3D" parent="3D/Cube/PivotLeft/A5" unique_id=1092269639]
+[node name="LabelG5" type="Label3D" parent="3D/Cube/Stationary/A5" unique_id=1092269639]
 transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 1.0000001, 1.01, 0.74999994)
 pixel_size = 0.01
 text = "A5"
 
-[node name="LabelR5" type="Label3D" parent="3D/Cube/PivotLeft/A5" unique_id=1622769597]
+[node name="LabelR5" type="Label3D" parent="3D/Cube/Stationary/A5" unique_id=1622769597]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.01, 0.5, 0.7499998)
 pixel_size = 0.01
 text = "A5"
 
-[node name="A6" parent="3D/Cube/PivotLeft" unique_id=450842594 instance=ExtResource("3_lquwl")]
+[node name="A6" parent="3D/Cube/Stationary" unique_id=450842594 groups=["blocks"] instance=ExtResource("3_lquwl")]
 unique_name_in_owner = true
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+id = "A6"
 
-[node name="LabelG6" type="Label3D" parent="3D/Cube/PivotLeft/A6" unique_id=1249072458]
+[node name="LabelG6" type="Label3D" parent="3D/Cube/Stationary/A6" unique_id=1249072458]
 transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0.99999994, 1.01, -0.75000006)
 pixel_size = 0.01
 text = "A6"
 
-[node name="LabelB6" type="Label3D" parent="3D/Cube/PivotLeft/A6" unique_id=1829953860]
+[node name="LabelB6" type="Label3D" parent="3D/Cube/Stationary/A6" unique_id=1829953860]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.9999999, 0.5, -1.5100001)
 pixel_size = 0.01
 text = "A6"
 
-[node name="LabelR6" type="Label3D" parent="3D/Cube/PivotLeft/A6" unique_id=930805505]
+[node name="LabelR6" type="Label3D" parent="3D/Cube/Stationary/A6" unique_id=930805505]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.01, 0.5, -0.7500002)
 pixel_size = 0.01
 text = "A6"
 
-[node name="A7" parent="3D/Cube/PivotLeft" unique_id=452884240 instance=ExtResource("4_7mycd")]
+[node name="A7" parent="3D/Cube/Stationary" unique_id=452884240 groups=["blocks"] instance=ExtResource("4_7mycd")]
 unique_name_in_owner = true
 transform = Transform3D(-1, -7.642742e-15, -8.742278e-08, 0, -1, 8.742278e-08, -8.742278e-08, 8.742278e-08, 1, 0, 0, 0)
+id = "A7"
 
-[node name="LabelB7" type="Label3D" parent="3D/Cube/PivotLeft/A7" unique_id=1712745433]
+[node name="LabelB7" type="Label3D" parent="3D/Cube/Stationary/A7" unique_id=1712745433]
 transform = Transform3D(-1, 1.5099579e-07, -8.742278e-08, -1.509958e-07, -1, 8.742278e-08, -8.742276e-08, 8.742279e-08, 1, 0.9999999, 0.5000001, 1.51)
 pixel_size = 0.01
 text = "A7"
 
-[node name="LabelR7" type="Label3D" parent="3D/Cube/PivotLeft/A7" unique_id=496193515]
+[node name="LabelR7" type="Label3D" parent="3D/Cube/Stationary/A7" unique_id=496193515]
 transform = Transform3D(-4.371139e-08, 0, 1, 8.742278e-08, -1, 3.821371e-15, 1, 8.742278e-08, 4.371139e-08, 2.01, 0.50000006, 0.7500001)
 pixel_size = 0.01
 text = "A7"
 
-[node name="LabelG7" type="Label3D" parent="3D/Cube/PivotLeft/A7" unique_id=256721011]
+[node name="LabelG7" type="Label3D" parent="3D/Cube/Stationary/A7" unique_id=256721011]
 transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, -7.642742e-15, 1.3113416e-07, 1, -8.742278e-08, 1, -1.3113416e-07, 0.99999994, 1.0100001, 0.75)
 pixel_size = 0.01
 text = "A7"
 
-[node name="A8" parent="3D/Cube/PivotLeft" unique_id=600197167 instance=ExtResource("3_lquwl")]
+[node name="A8" parent="3D/Cube/Stationary" unique_id=600197167 groups=["blocks"] instance=ExtResource("3_lquwl")]
 unique_name_in_owner = true
 transform = Transform3D(-1, -8.742277e-08, 0, 8.742278e-08, -0.99999994, 0, 0, 0, 1, 0, 0, 0)
+id = "A8"
 
-[node name="LabelG8" type="Label3D" parent="3D/Cube/PivotLeft/A8" unique_id=1102167497]
+[node name="LabelG8" type="Label3D" parent="3D/Cube/Stationary/A8" unique_id=1102167497]
 transform = Transform3D(-1, -3.821371e-15, -8.742278e-08, -8.7422784e-08, 4.3711392e-08, 1.0000001, 0, 1, -4.371139e-08, 0.99999994, 1.0100002, -0.75)
 pixel_size = 0.01
 text = "A8"
 
-[node name="LabelR8" type="Label3D" parent="3D/Cube/PivotLeft/A8" unique_id=1136024297]
+[node name="LabelR8" type="Label3D" parent="3D/Cube/Stationary/A8" unique_id=1136024297]
 transform = Transform3D(-0.006474203, -0.0074877734, 0.99995095, 0.00245471, -0.9999691, -0.007472006, 0.99997604, 0.0024061864, 0.006492393, 2.0185008, 0.4831248, -0.7381353)
 pixel_size = 0.01
 text = "A8"
 
-[node name="LabelB8" type="Label3D" parent="3D/Cube/PivotLeft/A8" unique_id=50633993]
+[node name="LabelB8" type="Label3D" parent="3D/Cube/Stationary/A8" unique_id=50633993]
 transform = Transform3D(-0.99999994, -8.742277e-08, 7.642742e-15, -8.742278e-08, 1, -8.7422784e-08, 0, -8.742277e-08, -1, 1.0134709, 0.48880598, -1.5046744)
 pixel_size = 0.01
 text = "A8"
+
+[node name="Pivot" type="Node3D" parent="3D/Cube" unique_id=1082135999]
+unique_name_in_owner = true
 
 [node name="Axes" type="Node3D" parent="3D" unique_id=935228796]
 
@@ -213,6 +222,32 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0xm2m")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="3D" unique_id=1510015917]
 environment = SubResource("Environment_ig7tw")
+
+[node name="ZBox" type="Area3D" parent="3D" unique_id=1982304751]
+unique_name_in_owner = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="3D/ZBox" unique_id=1866298484]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+shape = SubResource("BoxShape3D_885r8")
+debug_color = Color(0, 0.60038817, 0.70000815, 0.591)
+
+[node name="YBox" type="Area3D" parent="3D" unique_id=1939313260]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="3D/YBox" unique_id=1594860890]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+shape = SubResource("BoxShape3D_885r8")
+debug_color = Color(0, 0.60038817, 0.70000815, 0.591)
+
+[node name="XBox" type="Area3D" parent="3D" unique_id=51350468]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="3D/XBox" unique_id=1032933630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+shape = SubResource("BoxShape3D_885r8")
+debug_color = Color(0, 0.60038817, 0.70000815, 0.591)
 
 [node name="UI" type="Control" parent="." unique_id=1175167414]
 layout_mode = 3
@@ -459,18 +494,18 @@ grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
 
-[node name="ButtonLeft" type="Button" parent="UI/CanvasLayer/HBoxContainer" unique_id=849083258]
+[node name="ButtonX" type="Button" parent="UI/CanvasLayer/HBoxContainer" unique_id=849083258]
 layout_mode = 2
-text = "Left"
+text = "X"
 
-[node name="ButtonYaw" type="Button" parent="UI/CanvasLayer/HBoxContainer" unique_id=678114966]
+[node name="ButtonY" type="Button" parent="UI/CanvasLayer/HBoxContainer" unique_id=678114966]
 layout_mode = 2
-text = "Yaw"
+text = "Y"
 
-[node name="ButtonRight" type="Button" parent="UI/CanvasLayer/HBoxContainer" unique_id=111319633]
+[node name="ButtonZ" type="Button" parent="UI/CanvasLayer/HBoxContainer" unique_id=111319633]
 layout_mode = 2
-text = "Right"
+text = "Z"
 
-[connection signal="pressed" from="UI/CanvasLayer/HBoxContainer/ButtonLeft" to="." method="_on_button_left_pressed"]
-[connection signal="pressed" from="UI/CanvasLayer/HBoxContainer/ButtonYaw" to="." method="_on_button_yaw_pressed"]
-[connection signal="pressed" from="UI/CanvasLayer/HBoxContainer/ButtonRight" to="." method="_on_button_right_pressed"]
+[connection signal="pressed" from="UI/CanvasLayer/HBoxContainer/ButtonX" to="." method="_on_button_x_pressed"]
+[connection signal="pressed" from="UI/CanvasLayer/HBoxContainer/ButtonY" to="." method="_on_button_y_pressed"]
+[connection signal="pressed" from="UI/CanvasLayer/HBoxContainer/ButtonZ" to="." method="_on_button_z_pressed"]

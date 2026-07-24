@@ -12,14 +12,13 @@ func _process(_delta: float) -> void:
 	pass
 
 
-
-func _on_button_left_pressed() -> void:
-	cube.rotate_left()
-
-
-func _on_button_yaw_pressed() -> void:
-	cube.rotate_yaw()
+func _on_button_x_pressed() -> void:
+	cube.rot_x()
 
 
-func _on_button_right_pressed() -> void:
-	cube.rotate_right()
+func _on_button_y_pressed() -> void:
+	cube.rot_y()
+
+
+func _on_button_z_pressed() -> void:
+	cube.rot_z()

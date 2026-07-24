@@ -1,7 +1,22 @@
 [gd_scene format=3 uid="uid://drcm54homa3ot"]
 
+[ext_resource type="Script" uid="uid://cv2clhecnrtlu" path="res://block.gd" id="1_3ctkh"]
 [ext_resource type="PackedScene" uid="uid://bxd037c4r8gks" path="res://art/gem_b.glb" id="1_oxcbo"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_t6c0y"]
+margin = 0.2
+size = Vector3(1.8, 0.8, 1.4)
+
 [node name="GemB" type="Node3D" unique_id=103087178]
+script = ExtResource("1_3ctkh")
 
 [node name="blockbench_export" parent="." unique_id=982839807 instance=ExtResource("1_oxcbo")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1217912407]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1920086384]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -0.75)
+shape = SubResource("BoxShape3D_t6c0y")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]
