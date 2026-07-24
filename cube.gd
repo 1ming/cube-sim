@@ -187,11 +187,13 @@ class CubeData:
 			print(Face.keys()[f], ": ", faces[f])
 			
 
+# reparent blocks nodes so that blocks that should be rotated are children of Pivot node
+# and all other blocks should be children of Stationary node
 func reparent_blocks(rot_axis: String, rot_type: Rot = Rot.UPPER):
 	print("pivot on axis: ", rot_axis)
 	
+	# for full rotation, all blocks should move
 	if rot_type == Rot.FULL:
-		# add all nodes in stationary group to pivot group
 		for block: Block in get_tree().get_nodes_in_group("blocks"):
 			if block.rot_group == block.STATIONARY:
 				block.rot_group = block.PIVOT
@@ -199,17 +201,19 @@ func reparent_blocks(rot_axis: String, rot_type: Rot = Rot.UPPER):
 				print(block.name, " switched to pivot")
 		return
 
+	# for half rotations, check collision areas for each axis to determine
+	# if block should pivot or be stationary
+	# collision areas for a given axis detect blocks in its positive/upper area
+	# so any node that does not overlap is in its negative/lower area
 	for block: Block in get_tree().get_nodes_in_group("blocks"):
 		if ((block.in_rot_area(rot_axis) and rot_type == Rot.UPPER)
 			or (not block.in_rot_area(rot_axis) and rot_type == Rot.LOWER)
 		):
 			if block.rot_group == block.STATIONARY:
-				# reparent to pivot group
 				block.rot_group = block.PIVOT
 				block.reparent(pivot_group)
 				print(block.name, " switched to pivot")
 		elif block.rot_group == block.PIVOT:
-			# reparent to stationary group
 			block.rot_group = block.STATIONARY
 			block.reparent(stationary_group)
 			print(block.name, " switched to stationary")
